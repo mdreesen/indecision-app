@@ -1,45 +1,29 @@
 'use strict';
 
-/*
-const otherFunction = function() {
-    return x * x
+// arguments object - no longer bound with arrow functions
+// this keyword
+var add = function add(a, b) {
+    console.log(arguments);
+    return a + b;
 };
 
-function square(x) {
-   return x * x
+console.log(add(55, 1, 1, 1, 1, 10001));
+
+var user = {
+    name: 'Michael',
+    cities: ['philli', 'new york', 'dublin'],
+    printPlacesLived: function printPlacesLived() {
+        var _this = this;
+
+        // const that = this
+        console.log(this.name);
+        console.log(this.cities);
+
+        // arrow function does not bind "this"
+        this.cities.forEach(function (city) {
+            console.log(_this.name + ' has lived in ' + city);
+        });
+    }
 };
 
-// using these functions, don't need returns
-const squareArrow = (x) => {
-    return x * x;
-};
-*/
-
-// using these functions, don't need returns
-// const squareArrow = (x) => x * x;
-
-// console.log(squareArrow(9));
-// console.log(squareArrow(4));
-
-// challenge, arrow functions
-// get firstName
-// create regular arrow function
-// create arrow functions using the short syntax
-
-//const firstName = 'Michael Dreesen';
-
-// const fullName = 'Michael Dreesen';
-//let firstName;
-
-// get firstName function
-/*
-const getFirstName = (fullName) => {
-    return fullName.split(' ')[0]
-};
-*/
-// get firstName function
-var getFirstName = function getFirstName(fullName) {
-    return fullName.split(' ')[0];
-};
-
-console.log(getFirstName('Michael Dreesen'));
+user.printPlacesLived();
