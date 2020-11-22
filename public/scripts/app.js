@@ -16,14 +16,29 @@ var user = {
         var _this = this;
 
         // const that = this
-        console.log(this.name);
-        console.log(this.cities);
-
-        // arrow function does not bind "this"
-        this.cities.forEach(function (city) {
-            console.log(_this.name + ' has lived in ' + city);
+        return this.cities.map(function (city) {
+            return _this.name + ' has lived in ' + city;
         });
     }
 };
 
-user.printPlacesLived();
+console.log(user.printPlacesLived());
+
+// Challenge area
+
+var multiplier = {
+    // array of numbers, that we want to multiply
+    numbers: [2, 4, 6],
+    // multiply by, is a single number
+    multiplyBy: 3,
+    // multiply - return a new array where the numbers have been multiplied
+    multiply: function multiply() {
+        var _this2 = this;
+
+        return this.numbers.map(function (number) {
+            return number * _this2.multiplyBy;
+        });
+    }
+};
+
+console.log(multiplier.multiply());
