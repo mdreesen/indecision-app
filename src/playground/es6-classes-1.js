@@ -4,6 +4,8 @@
 // vin
 // getDescription - method we can have access to on the car
 
+
+
 /*
 class Person {
     constructor(name = 'Anonymous') {
@@ -21,4 +23,3 @@ console.log(me.getGreeting());
 const other = new Person();
 console.log(other.getGreeting());
 */
-"use strict";
